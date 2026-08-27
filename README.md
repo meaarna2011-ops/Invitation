@@ -184,6 +184,15 @@ If I continue developing this project, I would like to:
 * Experiment with more advanced JavaScript interactions
 
 ---
+## Development Journey
+
+![Screenshot 1](screenshots/Screenshot1.png)
+
+![Screenshot 2](screenshots/Screenshot2.png)
+
+![Screenshot 3](screenshots/Screenshot3.png)
+
+![Screenshot 4](screenshots/Screenshot4.png)
 
 ## Project Skills
 
@@ -211,3 +220,5 @@ If I continue developing this project, I would like to:
 * Web development
 * Interactive design
 * Project development
+
+* 
