@@ -1,0 +1,384 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #1a1a2e;
+    font-family: Georgia, serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+
+/* =================================
+   MAIN CONTAINER
+================================= */
+
+.game-container {
+    position: relative;
+    width: 100vw;
+    height: calc(100vw * (1580 / 1080));
+
+    max-width: 450px;
+    max-height: calc(450px * (1580 / 1080));
+
+    background: #000;
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+
+/* =================================
+   SCENES
+================================= */
+
+.scene {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-end;
+    align-items: center;
+
+    padding-bottom: 30px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+}
+
+.scene.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =================================
+   BACKGROUNDS
+================================= */
+
+.bg-img {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    object-fit: cover;
+
+    z-index: 1;
+}
+
+
+/* =================================
+   CHARACTERS
+================================= */
+
+.character-container {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+.char {
+    position: absolute;
+    object-fit: contain;
+}
+
+
+/* Aahana */
+
+.aahana-left {
+    left: 5%;
+    bottom: 28%;
+    width: 50%;
+}
+
+
+/* Cat on right */
+
+.cat-right {
+    right: 5%;
+    bottom: 28%;
+    width: 35%;
+}
+
+
+/* Cat in center */
+
+.cat-center {
+    left: 40%;
+    bottom: 28%;
+    width: 25%;
+}
+
+
+/* Fairy */
+
+.fairy-right {
+    right: 0;
+    bottom: 35%;
+    width: 45%;
+}
+
+
+/* =================================
+   STORY BOX
+================================= */
+
+.story-box {
+    position: relative;
+
+    z-index: 3;
+
+    width: 90%;
+
+    padding: 15px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border: 3px solid #f3a3b7;
+
+    border-radius: 15px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.story-box p {
+    color: #444;
+
+    font-size: 0.95rem;
+
+    line-height: 1.4;
+
+    margin-bottom: 12px;
+}
+
+
+/* =================================
+   BUTTON
+================================= */
+
+.next-btn {
+    border: none;
+
+    background: #f3a3b7;
+
+    color: white;
+
+    padding: 8px 18px;
+
+    border-radius: 20px;
+
+    font-size: 0.9rem;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+}
+
+.next-btn:hover {
+    transform: scale(1.05);
+}
+
+.next-btn:active {
+    transform: scale(0.97);
+}
+
+
+/* =================================
+   ENVELOPE AREA
+================================= */
+
+.envelope-wrapper {
+    position: relative;
+
+    z-index: 5;
+
+    width: 70%;
+    height: 45%;
+
+    margin-bottom: 15px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =================================
+   ENVELOPE
+================================= */
+
+.envelope {
+    position: relative;
+
+    width: 100%;
+
+    cursor: pointer;
+
+    animation: gentle-shake 2.5s infinite ease-in-out;
+}
+
+
+/* =================================
+   ENVELOPE IMAGE
+================================= */
+
+.envelope-front {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+
+    z-index: 3;
+}
+
+
+/* =================================
+   INVITATION CARD
+================================= */
+
+.card {
+    position: absolute;
+
+    top: 5%;
+    left: 2.5%;
+
+    width: 95%;
+
+    z-index: 2;
+
+    /* HIDDEN BEFORE CLICK */
+    opacity: 0;
+
+    /* Card starts tucked inside envelope */
+    transform: translateY(15%) scale(0.95);
+
+    pointer-events: none;
+
+    transition:
+        transform 1.2s cubic-bezier(0.19, 1, 0.22, 1),
+        opacity 0.4s ease;
+}
+
+.card img {
+    display: block;
+
+    width: 100%;
+
+    border-radius: 6px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =================================
+   AFTER CLICKING ENVELOPE
+================================= */
+
+.envelope.open .card {
+    opacity: 1;
+
+    transform:
+        translateY(-55%)
+        scale(1.15);
+
+    z-index: 4;
+
+    pointer-events: auto;
+}
+
+
+/* =================================
+   STOP SHAKING AFTER CLICK
+================================= */
+
+.envelope.stop-animation {
+    animation: none;
+}
+
+
+/* =================================
+   ENVELOPE SHAKE
+================================= */
+
+@keyframes gentle-shake {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    20% {
+        transform: rotate(3deg);
+    }
+
+    40% {
+        transform: rotate(-3deg);
+    }
+
+    60% {
+        transform: rotate(2deg);
+    }
+
+    80% {
+        transform: rotate(-2deg);
+    }
+}
+
+
+/* =================================
+   SMALL SCREENS
+================================= */
+
+@media (max-width: 500px) {
+
+    .story-box {
+        width: 92%;
+        padding: 12px;
+    }
+
+    .story-box p {
+        font-size: 0.88rem;
+    }
+
+    .next-btn {
+        font-size: 0.85rem;
+        padding: 7px 16px;
+    }
+}

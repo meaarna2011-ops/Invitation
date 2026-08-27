@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aahana's Royal Birthday Invitation</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="game-container">
+
+        <!-- SCENE 1: THE GOLDEN KINGDOM -->
+
+        <section id="scene-1" class="scene active">
+
+            <img
+                src="images/Kingdom.png"
+                class="bg-img"
+                alt="Golden Kingdom"
+            >
+
+            <div class="character-container">
+
+                <img
+                    src="images/PrincessAahana.png"
+                    class="char aahana-left"
+                    alt="Princess Aahana"
+                >
+
+                <img
+                    src="images/cat.png"
+                    class="char cat-right"
+                    alt="Aahana's cat"
+                >
+
+            </div>
+
+            <div class="story-box">
+
+                <p>
+                    Once upon a time, in a beautiful faraway kingdom,
+                    lived a bright and kind princess named Aahana.
+                    By her side was her most loyal companion—a clever
+                    little cat who went everywhere with her.
+                </p>
+
+                <button
+                    class="next-btn"
+                    onclick="nextScene(2)"
+                >
+                    Continue →
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- SCENE 2: THE ROYAL BEDROOM -->
+
+        <section id="scene-2" class="scene">
+
+            <img
+                src="images/Bedroom.png"
+                class="bg-img"
+                alt="Royal Bedroom"
+            >
+
+            <div class="character-container">
+
+                <img
+                    src="images/PrincessAahana.png"
+                    class="char aahana-left"
+                    alt="Princess Aahana"
+                >
+
+                <img
+                    src="images/cat.png"
+                    class="char cat-right"
+                    alt="Aahana's cat"
+                >
+
+            </div>
+
+            <div class="story-box">
+
+                <p>
+                    After a long day of exploring, Aahana and her furry
+                    friend retired to her royal chamber to rest.
+                    The evening was quiet, and everything was
+                    perfectly peaceful.
+                </p>
+
+                <button
+                    class="next-btn"
+                    onclick="nextScene(3)"
+                >
+                    Continue →
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- SCENE 3: THE BALCONY SURPRISE -->
+
+        <section id="scene-3" class="scene">
+
+            <img
+                src="images/Messenger.png"
+                class="bg-img"
+                alt="Royal Balcony"
+            >
+
+            <div class="character-container">
+
+                <img
+                    src="images/PrincessAahana.png"
+                    class="char aahana-left"
+                    alt="Princess Aahana"
+                >
+
+                <img
+                    src="images/cat.png"
+                    class="char cat-center"
+                    alt="Aahana's cat"
+                >
+
+                <img
+                    src="images/MessengerFairy.png"
+                    class="char fairy-right"
+                    alt="Fairy Messenger"
+                >
+
+            </div>
+
+            <div class="story-box">
+
+                <p>
+                    To catch the cool evening breeze, Aahana stepped
+                    out onto her bedroom balcony. Suddenly, a trail
+                    of stardust lit up the sky! A magical fairy messenger
+                    fluttered down from the clouds, holding out a
+                    mysterious letter.
+                </p>
+
+                <button
+                    class="next-btn"
+                    onclick="nextScene(4)"
+                >
+                    Continue →
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- SCENE 4: THE GRAND CELEBRATION -->
+
+        <section id="scene-4" class="scene">
+
+            <img
+                src="images/Celebrationbackground.png"
+                class="bg-img"
+                alt="Birthday Celebration"
+            >
+
+            <div class="story-box">
+
+                <p>
+                    The fairy fluttered her wings and announced that
+                    the entire kingdom was preparing for a magnificent,
+                    magical celebration. A milestone day was approaching,
+                    and a grand feast was being thrown in honor of
+                    Princess Aahana turning eight!
+                </p>
+
+                <button
+                    class="next-btn"
+                    onclick="nextScene(5)"
+                >
+                    Open Invitation 💌
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- SCENE 5: THE INTERACTIVE ENVELOPE -->
+
+        <section id="scene-5" class="scene">
+
+            <img
+                src="images/Envelopebackground.png"
+                class="bg-img"
+                alt="Floral Background"
+            >
+
+            <div class="envelope-wrapper">
+
+                <div
+                    class="envelope"
+                    id="interactive-envelope"
+                    onclick="openEnvelope()"
+                >
+
+                    <!-- INVITATION CARD -->
+
+                    <div
+                        class="card"
+                        id="invitation-card"
+                    >
+
+                        <img
+                            src="images/InvitationCard.png"
+                            alt="Aahana's 8th Birthday Invitation"
+                        >
+
+                    </div>
+
+
+                    <!-- ENVELOPE -->
+
+                    <img
+                        src="images/Envelope.png"
+                        class="envelope-front"
+                        alt="Royal Envelope"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="story-box"
+                id="envelope-instruction"
+            >
+
+                <p>
+                    "This invitation is for you, Princess,"
+                    the fairy whispered. "And for all of your
+                    most honored guests..."
+                    <br>
+                    <br>
+
+                    <strong>
+                        *Tap the royal letter to open your invitation...*
+                    </strong>
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
