@@ -186,13 +186,13 @@ If I continue developing this project, I would like to:
 ---
 ## Development Journey
 
-![Screenshot 1](screenshots/Screenshot1.png)
+![Screenshot 1](Screenshot%201%20.png)
 
-![Screenshot 2](screenshots/Screenshot2.png)
+![Screenshot 2](Screenshot2.png)
 
-![Screenshot 3](screenshots/Screenshot3.png)
+![Screenshot 3](Screenshot3.png)
 
-![Screenshot 4](screenshots/Screenshot4.png)
+![Screenshot 4](Screenshot4.png)
 
 ## Project Skills
 
@@ -220,5 +220,3 @@ If I continue developing this project, I would like to:
 * Web development
 * Interactive design
 * Project development
-
-* 
